@@ -22,8 +22,39 @@ model User {
     avatarURL String?
     githubUsername String?
 
+    coffeeShop    CoffeeShop[]
+
     followers User[] @relation("FollowRelation", references: [id])
     following User[] @relation("FollowRelation", references: [id])
 
 }
+
+model CoffeeShop {
+     id          Int        @id @default(autoincrement())
+     name        String
+     latitude    String?
+     longitude   String?
+     user        User       @relation(fields: [userId], references: [id])
+     userId      Int
+     photos      CoffeeShopPhoto[]
+     categories  Category[]
+}
+
+model CoffeeShopPhoto{
+        id          Int @id @default(autoincrement())
+        url         String
+        coffeeShop        CoffeeShop       @relation(fields: [coffeeShopId], references: [id])
+        coffeeShopId      Int
+
+
+}
+
+model Category{
+        id          Int        @id @default(autoincrement())
+        category    String     @unique
+        slug        String?
+        shops       CoffeeShop[]
+}
+
+
 
