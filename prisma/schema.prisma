@@ -41,19 +41,17 @@ model CoffeeShop {
 }
 
 model CoffeeShopPhoto{
-        id          Int @id @default(autoincrement())
-        url         String
-        coffeeShop        CoffeeShop       @relation(fields: [coffeeShopId], references: [id])
-        coffeeShopId      Int
-
-
+     id                Int         @id @default(autoincrement())
+     url               String
+     coffeeShop        CoffeeShop  @relation(fields: [coffeeShopId], references: [id])
+     coffeeShopId      Int
 }
 
 model Category{
-        id          Int        @id @default(autoincrement())
-        category    String     @unique
-        slug        String?
-        shops       CoffeeShop[]
+     id          Int           @id @default(autoincrement())
+     category    String        @unique
+     slug        String?
+     shops       CoffeeShop[]
 }
 
 

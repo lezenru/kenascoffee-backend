@@ -2,10 +2,22 @@
 
 Instaclone backend.
 
-- [ ] Create Account
+User
+
+- [x] Create Account
 - [x] See Profile
 - [x] Login
-- [ ] Edit Profile
-- [ ] Follow User
-- [ ] Unfollow User
-- [ ] Change Avatar (Image Upload)
+- [x] Edit Profile
+- [x] Follow User
+- [x] Unfollow User
+- [x] See User
+
+
+CoffeeShop
+
+- [x] Create CoffeeShop
+- [x] Edit CoffeeShop 
+- [x] See CoffeeShops with pagination
+- [x] See CoffeeShop
+- [ ] See Category with pagination
+- [ ] See Categories with pagination
