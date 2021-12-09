@@ -5,6 +5,7 @@ import schema from "./schema";
 import {getUser, protectResolver} from "./users/users.utils";
 
 const server = new ApolloServer({
+    playground: true,
     schema,
     context: async ({req}) => {
         return {
