@@ -6,6 +6,7 @@ import {getUser, protectResolver} from "./users/users.utils";
 
 const server = new ApolloServer({
     playground: true,
+    introspection: true,
     schema,
     context: async ({req}) => {
         return {
