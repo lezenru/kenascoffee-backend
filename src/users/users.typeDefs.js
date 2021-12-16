@@ -1,12 +1,13 @@
 import {gql} from "apollo-server";
 
-//비밀번호는 여기서 다루지 않음
+/* typeDef 에서는 비밀번호를 다루지 않음 */
+
 export default gql`
     type User{
         id: String!
         
         name: String!
-        username: String
+        username: String!
         email: String!
 
         location: String
@@ -19,7 +20,8 @@ export default gql`
         totalFollowing: Int!
         totalFollowers: Int!
 
-
+        isMe: Boolean!
+        isFollowing:Boolean!
     }
    
     

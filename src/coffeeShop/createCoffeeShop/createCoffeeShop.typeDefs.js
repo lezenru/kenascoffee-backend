@@ -12,9 +12,9 @@ export default gql`
     type Mutation {
         createCoffeeShop (
             name: String! 
-            latitude: Int
-            longitude: Int
-            categories: String!
+            latitude: String
+            longitude: String
+            categories: String
         ): CreateShopResult
     }
 `;

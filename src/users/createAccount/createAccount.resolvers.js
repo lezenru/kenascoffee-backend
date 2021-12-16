@@ -42,7 +42,7 @@ export default {
                 const uglyPassword = await bcrypt.hash(password, 10);
 
                 // save and return user
-                return client.user.create({
+                const user = await client.user.create({
                     data:{
                         username,
                         email,
@@ -54,6 +54,17 @@ export default {
                         githubUsername,
                     }
                 })
+
+                if(user){
+                    return {
+                        ok: true,
+                    }
+                }else{
+                    return {
+                        ok: false,
+                        error: "계정 생성 실패",
+                    }
+                }
 
 
 

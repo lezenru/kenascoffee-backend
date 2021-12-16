@@ -12,7 +12,7 @@ export default gql`
     }
     
     type Query {
-        seeCoffeeShops(page:Int!): SeeShopsResult!
+        seeCoffeeShops(page:Int): SeeShopsResult!
     }
 
 `;

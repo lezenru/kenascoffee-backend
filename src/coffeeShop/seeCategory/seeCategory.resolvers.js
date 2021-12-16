@@ -8,7 +8,9 @@ export default {
 
             //해당 카테고리가 포함된 모든 커피샵을 가져와야함
             const coffeeShops = await client.category.findUnique({
-                where: {category}}).shops({
+                where: {
+                    name: category
+                }}).shops({
                 take: 5,
                 skip: (page-1)*5
             });

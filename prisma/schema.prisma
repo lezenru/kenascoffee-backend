@@ -27,17 +27,26 @@ model User {
     followers User[] @relation("FollowRelation", references: [id])
     following User[] @relation("FollowRelation", references: [id])
 
+    createdAt      DateTime     @default(now())
+    updatedAt      DateTime     @updatedAt
+
 }
 
 model CoffeeShop {
      id          Int        @id @default(autoincrement())
      name        String
+
      latitude    String?
      longitude   String?
+
      user        User       @relation(fields: [userId], references: [id])
      userId      Int
+
      photos      CoffeeShopPhoto[]
      categories  Category[]
+
+     createdAt      DateTime     @default(now())
+     updatedAt      DateTime     @updatedAt
 }
 
 model CoffeeShopPhoto{
@@ -45,13 +54,19 @@ model CoffeeShopPhoto{
      url               String
      coffeeShop        CoffeeShop  @relation(fields: [coffeeShopId], references: [id])
      coffeeShopId      Int
+
+     createdAt      DateTime     @default(now())
+     updatedAt      DateTime     @updatedAt
 }
 
 model Category{
      id          Int           @id @default(autoincrement())
-     category    String        @unique
+     name        String        @unique
      slug        String?
      shops       CoffeeShop[]
+
+     createdAt      DateTime     @default(now())
+     updatedAt      DateTime     @updatedAt
 }
 
 

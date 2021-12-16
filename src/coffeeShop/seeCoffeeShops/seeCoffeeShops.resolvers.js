@@ -5,6 +5,9 @@ import client from "../../client";
 export default {
     Query: {
         seeCoffeeShops: async (_, {page}) => {
+
+            if (!page){page=1};
+
             const coffeeShops = await client.coffeeShop.findMany({
                     skip: (page-1)*5,
                     take: 5
