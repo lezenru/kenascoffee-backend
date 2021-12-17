@@ -29,6 +29,7 @@
     "@graphql-tools/schema": "^8.3.1",
     "@prisma/client": "^3.6.0",
     "apollo-server": "^2.25.3",
+    "nodemon": "^2.0.15",
     "bcrypt": "^5.0.1",
     "dotenv": "^10.0.0",
     "fs-capacitor": "^6.2.0",
@@ -40,7 +41,6 @@
     "@babel/node": "^7.16.0",
     "@babel/plugin-transform-runtime": "^7.16.4",
     "@babel/preset-env": "^7.16.4",
-    "nodemon": "^2.0.15",
     "prisma": "^3.6.0"
   }
 }
