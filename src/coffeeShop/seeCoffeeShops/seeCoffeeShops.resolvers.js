@@ -15,7 +15,6 @@ export default {
 
             const totalShops = await client.coffeeShop.count();
 
-            console.log(`totalShops:`+totalShops);
 
             return {
                 ok: true,
